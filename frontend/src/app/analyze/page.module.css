@@ -1,0 +1,215 @@
+/* Resume Analyzer — Next.js + plain CSS Module */
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  padding: 64px 16px;
+  background:
+    radial-gradient(ellipse at top, #1a1830 0%, #0a0814 60%);
+  color: #f5f5fa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .main { padding: 96px 16px; }
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.badge {
+  border: 1px solid #2a2740;
+  background: rgba(30, 28, 50, 0.6);
+  color: #a5a3b8;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  margin-top: 24px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .title { font-size: 60px; }
+}
+
+.titleGradient {
+  background: linear-gradient(90deg, #7dd3fc, #c084fc, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin-top: 16px;
+  max-width: 640px;
+  color: #a5a3b8;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .subtitle { font-size: 18px; }
+}
+
+/* Panel */
+.panel {
+  margin-top: 48px;
+  border: 1px solid #2a2740;
+  background: rgba(24, 22, 40, 0.4);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+@media (min-width: 768px) {
+  .panel { padding: 32px; }
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+/* Cards */
+.card {
+  border: 1px solid #2a2740;
+  background: rgba(30, 28, 50, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardTitle h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.iconCyan { color: #7dd3fc; }
+.iconPurple { color: #c084fc; }
+
+.uploadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: 1px solid #2a2740;
+  background: rgba(40, 38, 60, 0.6);
+  color: #f5f5fa;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.uploadBtn:hover { background: rgba(50, 48, 75, 0.8); }
+
+.hiddenInput { display: none; }
+
+.textarea {
+  height: 288px;
+  width: 100%;
+  resize: none;
+  border-radius: 8px;
+  border: 1px solid #2a2740;
+  background: rgba(20, 18, 35, 0.4);
+  padding: 16px;
+  font-size: 14px;
+  color: #f5f5fa;
+  font-family: inherit;
+  outline: none;
+  transition: box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder { color: rgba(165, 163, 184, 0.7); }
+
+.textarea:focus {
+  box-shadow: 0 0 0 2px #a78bfa;
+}
+
+.counter {
+  margin-top: 8px;
+  text-align: right;
+  font-size: 12px;
+  color: #a5a3b8;
+}
+
+/* Footer */
+.footer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .footer { flex-direction: row; align-items: center; }
+}
+
+.notice {
+  font-size: 12px;
+  color: #a5a3b8;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4c1d95, #7c3aed);
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.4);
+  transition: filter 0.15s;
+}
+
+.cta:hover:not(:disabled) { filter: brightness(1.1); }
+
+.cta:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
