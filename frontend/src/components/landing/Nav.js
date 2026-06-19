@@ -20,7 +20,7 @@ export function Nav() {
             </span>
 
             <span className="text-lg font-bold tracking-tight text-white">
-              HireMind <span className="text-cyan-400">AI</span>
+              InterviewIQ <span className="text-cyan-400">AI</span>
             </span>
           </a>
 

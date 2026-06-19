@@ -26,7 +26,7 @@ export function FinalCTA() {
               href="#pricing"
               className="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-medium hover:bg-white/5"
             >
-             Try Now
+             Try Now 
             </a>
           </div>
         </div>

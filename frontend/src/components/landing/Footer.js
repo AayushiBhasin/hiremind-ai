@@ -19,7 +19,7 @@ export function Footer() {
           <div className="mt-5 flex items-center gap-3">
             {[Twitter, Github, Linkedin].map((Icon, i) => (
               <a
-                key={i}
+                key={i} 
                 href="#"
                 className="grid h-9 w-9 place-items-center rounded-lg glass text-muted-foreground transition-colors hover:text-foreground"
               >
