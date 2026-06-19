@@ -10,7 +10,7 @@ export function Footer() {
               <Brain className="h-4 w-4 text-primary-foreground" />
             </span>
             <span className="font-display text-base font-semibold">
-              HireMind <span className="text-gradient">AI</span>
+              InterviewIQ <span className="text-gradient">AI</span>
             </span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="mx-auto mt-10 max-w-6xl px-4">
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} HireMind AI. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} InterviewIQ AI. All rights reserved.</span>
           <span>Built with AI, for ambitious humans.</span>
         </div>
       </div>

@@ -7,41 +7,50 @@ export function Nav() {
     { href: "#preview", label: "AI Preview" },
     { href: "#pricing", label: "Pricing" },
   ];
+
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      <div className="mx-auto mt-4 max-w-6xl px-4">
-        <nav className="glass-strong flex items-center justify-between rounded-2xl px-4 py-3 sm:px-6">
+      <div className="mx-auto mt-4 max-w-7xl px-4">
+        <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 backdrop-blur-2xl supports-[backdrop-filter]:bg-black/30 shadow-xl px-5 py-3 transition-all duration-300">
+          
+          {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="relative grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary glow-primary">
-              <Brain className="h-4 w-4 text-primary-foreground" />
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 shadow-lg shadow-cyan-500/30">
+              <Brain className="h-5 w-5 text-white" />
             </span>
-            <span className="font-display text-base font-semibold tracking-tight">
-              HireMind <span className="text-gradient">AI</span>
+
+            <span className="text-lg font-bold tracking-tight text-white">
+              HireMind <span className="text-cyan-400">AI</span>
             </span>
           </a>
+
+          {/* Navigation Links */}
           <div className="hidden items-center gap-8 md:flex">
-            {links.map((l) => (
+            {links.map((link) => (
               <a
-                key={l.href}
-                href={l.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-gray-300 transition-all duration-300 hover:text-cyan-400"
               >
-                {l.label}
+                {link.label}
               </a>
             ))}
           </div>
-          <div className="flex items-center gap-2">
+
+          {/* Buttons */}
+          <div className="flex items-center gap-3">
             <a
               href="#cta"
-              className="hidden rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline-block"
+              className="hidden rounded-lg px-4 py-2 text-sm font-medium text-gray-300 transition hover:text-white sm:block"
             >
-              Sign in
+              Sign In
             </a>
+
             <a
               href="#cta"
-              className="rounded-lg bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03] glow-primary"
+              className="rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 transition duration-300 hover:scale-105 hover:shadow-cyan-400/50"
             >
-              Get started
+              Get Started
             </a>
           </div>
         </nav>

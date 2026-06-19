@@ -20,7 +20,7 @@ export default function Page() {
         <AIPreview />
         <InterviewPrep />
         <Testimonials />
-        <Pricing />
+        {/* <Pricing /> */}
         <FinalCTA />
       </main>
       {/* <Footer /> */}

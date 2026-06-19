@@ -3,11 +3,11 @@ import "./globals.css";
 import { Nav } from "@/components/landing/Nav";
 
 export const metadata = {
-  title: "HireMind AI — Land your dream job with AI",
+  title: "InterviewIQ AI — Land your dream job with AI",
   description:
     "AI-powered resume analysis, ATS optimization, and personalized interview preparation. Upload your resume, paste a JD, and get instant insights.",
   openGraph: {
-    title: "HireMind AI — Land your dream job with AI",
+    title: "InterviewIQ AI — Land your dream job with AI",
     description:
       "AI-powered resume analysis, ATS optimization, and personalized interview prep.",
   },

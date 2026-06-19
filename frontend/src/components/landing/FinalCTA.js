@@ -12,7 +12,7 @@ export function FinalCTA() {
             <span className="text-gradient">better preparation</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-            Join thousands of candidates using HireMind AI to ship resumes that get interviews — and ace them.
+            Join thousands of candidates using InterviewIQ AI to ship resumes that get interviews — and ace them.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
@@ -26,7 +26,7 @@ export function FinalCTA() {
               href="#pricing"
               className="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-medium hover:bg-white/5"
             >
-              See Pricing
+             Try Now
             </a>
           </div>
         </div>

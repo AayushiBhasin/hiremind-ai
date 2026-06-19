@@ -4,7 +4,7 @@ const items = [
   {
     name: "Aarav Mehta",
     role: "Senior SWE → Stripe",
-    quote: "HireMind's ATS score jumped me from 58 to 94. Got 4 offers in 3 weeks.",
+    quote: "InterviewIQ's ATS score jumped me from 58 to 94. Got 4 offers in 3 weeks.",
     initials: "AM",
   },
   {

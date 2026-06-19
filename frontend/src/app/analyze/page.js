@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FileText, Briefcase, Upload, Sparkles } from "lucide-react";
 import { InterviewPrep } from "./InterviewPrepReport";
-
+import pdfToText from "react-pdftotext";
 import styles from "./page.module.css";
 import { AIPreview } from "./AIPreviewReport";
 
@@ -14,20 +14,36 @@ export default function Home() {
   const [analysis, setAnalysis] = useState(null);
 
   const canAnalyze = resume.length >= 50 && jd.length >= 20;
+  const handleUpload = async (e) => {
+    const file = e.target.files?.[0];
 
+    if (!file) return;
+
+    try {
+      const text = await pdfToText(file);
+
+      setResume(text);
+    } catch (error) {
+      console.error(error);
+      alert("Unable to extract text from PDF.");
+    }
+  };
   const handleAnalyze = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/analyze`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/analyze`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            resumeText: resume,
+            jobDescription: jd,
+          }),
         },
-        body: JSON.stringify({
-          resumeText: resume,
-          jobDescription: jd,
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -73,10 +89,10 @@ export default function Home() {
 
                 <label className={styles.uploadBtn}>
                   <Upload size={14} />
-                  Upload .txt
-                  <input
+                  Upload .pdf
+                  {/* <input
                     type="file"
-                    accept=".txt"
+                    accept=".pdf"
                     className={styles.hiddenInput}
                     onChange={async (e) => {
                       const file = e.target.files?.[0];
@@ -87,6 +103,12 @@ export default function Home() {
                         setResume(text);
                       }
                     }}
+                  /> */}
+                  <input
+                    type="file"
+                    accept=".pdf"
+                    className={styles.hiddenInput}
+                    onChange={handleUpload}
                   />
                 </label>
               </div>
@@ -169,11 +191,9 @@ export default function Home() {
           //   </pre>
           // </div>
           <>
-           <AIPreview analysis={analysis.data}/>
-        <InterviewPrep analysis={analysis.data} />
+            <AIPreview analysis={analysis.data} />
+            <InterviewPrep analysis={analysis.data} />
           </>
-         
-
         )}
       </div>
 

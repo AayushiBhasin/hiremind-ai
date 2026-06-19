@@ -114,7 +114,7 @@ export function Hero() {
               <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.82_0.18_85)]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.72_0.19_150)]" />
               <span className="ml-3 text-[10px] text-muted-foreground">
-                app.hiremind.ai/analyze
+                app.InterviewIQ.ai/analyze
               </span>
             </div>
             <div className="grid grid-cols-12 gap-3 rounded-xl bg-[oklch(0.16_0.03_270)] p-4 text-left">
