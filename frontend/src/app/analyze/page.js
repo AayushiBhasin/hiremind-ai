@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FileText, Briefcase, Upload, Sparkles } from "lucide-react";
 import { InterviewPrep } from "./InterviewPrepReport";
-import pdfToText from "react-pdftotext";
+// import pdfToText from "react-pdftotext";
 import styles from "./page.module.css";
 import { AIPreview } from "./AIPreviewReport";
 
@@ -15,19 +15,21 @@ export default function Home() {
 
   const canAnalyze = resume.length >= 50 && jd.length >= 20;
   const handleUpload = async (e) => {
-    const file = e.target.files?.[0];
+  const file = e.target.files?.[0];
 
-    if (!file) return;
+  if (!file) return;
 
-    try {
-      const text = await pdfToText(file);
+  try {
+    const pdfToText = (await import("react-pdftotext")).default;
 
-      setResume(text);
-    } catch (error) {
-      console.error(error);
-      alert("Unable to extract text from PDF.");
-    }
-  };
+    const text = await pdfToText(file);
+
+    setResume(text);
+  } catch (error) {
+    console.error(error);
+    alert("Unable to extract text from PDF.");
+  }
+};
   const handleAnalyze = async () => {
     try {
       setLoading(true);
